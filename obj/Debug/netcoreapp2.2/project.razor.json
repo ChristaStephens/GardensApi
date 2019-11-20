@@ -1,0 +1,19 @@
+{
+  "FilePath": "c:\\Users\\CStephens3\\OneDrive - Knex\\Marvel\\Test Apps\\GardensApi\\GardensApi.csproj",
+  "Configuration": {
+    "ConfigurationName": "MVC-3.0",
+    "LanguageVersion": "3.0",
+    "Extensions": [
+      {
+        "ExtensionName": "MVC-3.0"
+      }
+    ]
+  },
+  "ProjectWorkspaceState": {
+    "TagHelpers": [],
+    "CSharpLanguageVersion": 703
+  },
+  "RootNamespace": "GardensApi",
+  "Documents": [],
+  "SerializationFormat": "0.2"
+}
