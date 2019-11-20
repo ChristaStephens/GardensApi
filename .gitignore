@@ -1,0 +1,29 @@
+# Created by https://www.gitignore.io/api/web,dotnetcore
+# Edit at https://www.gitignore.io/?templates=web,dotnetcore
+
+### DotnetCore ###
+# .NET Core build folders
+/bin
+/obj
+
+# Common node modules locations
+/node_modules
+/wwwroot/node_modules
+
+
+### Web ###
+*.asp
+*.cer
+*.csr
+*.css
+*.htm
+*.html
+*.js
+*.jsp
+*.php
+*.rss
+*.wasm
+*.wat
+*.xhtml
+
+# End of https://www.gitignore.io/api/web,dotnetcore
