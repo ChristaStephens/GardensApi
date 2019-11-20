@@ -8,6 +8,10 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
+//registers our services and started by create builder method from program.cs
+//startup calls two services: 1. configure services method - this is used throughout your app
+//and can be registered here. 2. Configure method - responsible for setting up a request pipeline
+//meaning request in sequences making request handling available.
 namespace GardensApi
 {
     public class Startup
