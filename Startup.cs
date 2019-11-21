@@ -3,6 +3,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Configuration;
+using Microsoft.EntityFrameworkCore;
+using GardensApi.Models;
 
 //registers our services and started by create builder method from program.cs
 //startup calls two services: 1. configure services method - this is used throughout your app
@@ -25,6 +27,8 @@ namespace GardensApi
         }
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContext<GardenContext>
+            (opt => opt.UseSqlServer(Configuration["Data:GardenAPIConnection:ConnectionString"]));
            services.AddMvc(options => options.EnableEndpointRouting = false).SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
         }
 
