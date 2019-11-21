@@ -6,6 +6,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.EntityFrameworkCore;
 using GardensApi.Models;
 
+//dotnet add package ... <- insert package name
 //registers our services and started by create builder method from program.cs
 //startup calls two services: 1. configure services method - this is used throughout your app
 //and can be registered here. 2. Configure method - responsible for setting up a request pipeline
