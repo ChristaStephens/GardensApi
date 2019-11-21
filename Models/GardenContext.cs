@@ -13,7 +13,10 @@ namespace GardensApi.Models
         {
 
         }
-        //this will be a table in our database that willl connect to our database
+        //this will be a table in our database that will connect to our database
+        //click dbo.gardenitems in sql
+        //right click on the above line item and click edit top 200 rows
+        //input data
         public DbSet<Garden> GardenItems {get; set;}
     }
 }
