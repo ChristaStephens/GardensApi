@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
+using GardensApi.Models;
 
 //namespace based on folder structure (root then folder)
     //inherits from controller base
@@ -15,11 +16,23 @@ namespace GardensApi.Controllers
     [ApiController]
     public class GardensController : ControllerBase
     {
-        //action result will map to command action
+        //setting our controller up to use our db context class
+        private readonly GardenContext _context;
+
+        public GardensController(GardenContext context) => _context = context;
+
+        //Get:      api/gardens
         [HttpGet]
-        public ActionResult<IEnumerable<string>> GetString()
+        public ActionResult<IEnumerable<Garden>> GetGardens()
         {
-            return new string[] {"this", "is", "hard", "coded"};
+            return _context.GardenItems;
         }
+
+        //action result will map to command action
+        // [HttpGet]
+        // public ActionResult<IEnumerable<string>> GetString()
+        // {
+        //     return new string[] {"this", "is", "hard", "coded"};
+        // }
     }
 }
