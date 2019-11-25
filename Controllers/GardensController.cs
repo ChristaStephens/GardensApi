@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 using GardensApi.Models;
+using Microsoft.EntityFrameworkCore;
 
 //namespace based on folder structure (root then folder)
 //inherits from controller base
@@ -41,6 +42,31 @@ namespace GardensApi.Controllers
             }
 
             return gardenItem;
+        }
+
+        //Post: add a new plant     api/gardens
+        [HttpPost]
+        public ActionResult<Garden> PostGardenItem(Garden garden)
+        {
+            _context.GardenItems.Add(garden);
+            _context.SaveChanges();
+
+            return CreatedAtAction("GetGardenItem", new Garden{Id = garden.Id}, garden);
+        }
+
+        //Put: updated a plant's detail     api/{#}
+        [HttpPut("{id}")]
+        public ActionResult<Garden> PutGardenItem(int id, Garden garden)
+        {
+            if (id != garden.Id)
+            {
+                return BadRequest();
+            }
+
+            _context.Entry(garden).State = EntityState.Modified;
+            _context.SaveChanges();
+
+            return NoContent();
         }
     }
 }
