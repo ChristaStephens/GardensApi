@@ -54,7 +54,7 @@ namespace GardensApi.Controllers
             return CreatedAtAction("GetGardenItem", new Garden{Id = garden.Id}, garden);
         }
 
-        //Put: updated a plant's detail     api/{#}
+        //Put: updated a plant's detail     api/gardens/{#}
         [HttpPut("{id}")]
         public ActionResult<Garden> PutGardenItem(int id, Garden garden)
         {
@@ -67,6 +67,23 @@ namespace GardensApi.Controllers
             _context.SaveChanges();
 
             return NoContent();
+        }
+
+        //Delete: delete a plants details   api/gardens/{#}
+        [HttpDelete("{id}")]
+        public ActionResult<Garden> DeleteGardenItem(int id)
+        {
+            var gardenItem = _context.GardenItems.Find(id);
+
+            if (gardenItem == null)
+            {
+                return NotFound();
+            }
+
+            _context.GardenItems.Remove(gardenItem);
+            _context.SaveChanges();
+
+            return gardenItem;
         }
     }
 }
